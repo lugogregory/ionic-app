@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar sizeMd="6" color="primary">
     <ion-title class="ion-text-uppercase">places</ion-title>
 
     <ion-buttons slot="end">
@@ -14,14 +14,21 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let place of places" >
-      <ion-avatar slot="start">
-        <img [src]="place.img" />
-      </ion-avatar>
-      <ion-label  [routerLink]="[ '/places', place.id ]">{{place.name}}</ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-grid >
+    <ion-row  class="ion-justify-content-center">
+      <ion-col sizeMd="6" class="ion-float-right">
+        <ion-list>
+          <ion-item *ngFor="let place of places" >
+            <ion-avatar slot="start">
+              <img [src]="place.img" />
+            </ion-avatar>
+            <ion-label  [routerLink]="[ '/places', place.id ]">{{place.name}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">
